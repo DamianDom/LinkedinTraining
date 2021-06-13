@@ -4,8 +4,8 @@ package com.example.java;
 // CTRL+K - commit
 // CTRL+SHIFT+K - push
 public class Main {
-    public static void main(String[] args) {
-    System.out.println("Hello There !");
+   public static void main(String[] args) {
+/*     System.out.println("Hello There !");
     String aString = "Damian";
     System.out.println("Hello there " + aString);
 
@@ -19,9 +19,15 @@ public class Main {
         System.out.println("BYTE: " + byteValue);
         System.out.println("INT: " + intValue);
         System.out.println("FLOAT: " + floatValue);
-        System.out.println("STRING: " + stringValue);
+        System.out.println("STRING: " + stringValue);*/
 
+    byte b = 127;
+        System.out.println("Byte:" + b);
 
+        if( b < Byte.MAX_VALUE){
+        b++;
+    }
+        System.out.println("Byte" + b);
+}
 
     }
-}
