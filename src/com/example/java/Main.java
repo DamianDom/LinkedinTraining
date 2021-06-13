@@ -1,5 +1,7 @@
 package com.example.java;
 
+import java.math.BigDecimal;
+
 // CTRL+Q - java documentation
 // CTRL+K - commit
 // CTRL+SHIFT+K - push
@@ -33,12 +35,27 @@ public class Main {
         System.out.println("Byte" + b);
     }
 
+    static void doublePrecise(){
+        double value = .012;
+        double pSum = value + value + value;
+
+        System.out.println("Sum of primitives: " + pSum);
+
+        String strValue = Double.toString(value);
+        System.out.println("strValue: " + strValue);
+        BigDecimal bigValue = new BigDecimal(strValue);
+
+        BigDecimal bSum = bigValue.add(bigValue).add(bigValue);
+        System.out.println("Sum of BigDecimals: " + bSum.toString());
+    }
+
    public static void main(String[] args) {
         maxValues(); // invoked static method
-        System.out.println("\n");
+        System.out.println("********************************************************************************************");
         Main mn = new Main();
         mn.primitivesCast(); // invoked non static method
-
+        System.out.println("********************************************************************************************");
+        doublePrecise();
 
 
    }
