@@ -1,7 +1,13 @@
 package com.example.java;
 
 import java.math.BigDecimal;
+import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -268,6 +274,45 @@ public class Main {
         System.out.println(s3.length());
     }
 
+    private static void datesAndTimes(){
+        Date d = new Date();
+        System.out.println(d);
+
+        GregorianCalendar gc = new GregorianCalendar(2009, 1, 28);
+        gc.add(GregorianCalendar.DATE, 1);
+        Date d2 = gc.getTime();
+        System.out.println(d2);
+
+        DateFormat df = DateFormat.getDateInstance(DateFormat.FULL);
+        System.out.println(df.format(d2));
+
+        LocalDateTime ldt = LocalDateTime.now();
+        System.out.println(ldt);
+
+        LocalDate ld = LocalDate.of(2009, 1, 28);
+        System.out.println(ld);
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("M/d/yyyy");
+        System.out.println(dtf.format(ld));
+    }
+
+    private static void simpleCalc(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a numeric value: ");
+        String input1 = sc.nextLine();
+        double d1 = Double.parseDouble(input1);
+
+        System.out.print("Enter a numeric value: ");
+        String input2 = sc.nextLine();
+        double d2 = Double.parseDouble(input2);
+
+        double result = d1 + d2;
+
+        System.out.println("The answer is " + result);
+
+    }
+
     public static void main(String[] args) {
         /* maxValues(); // invoked static method
         System.out.println("********************************************************************************************");
@@ -283,9 +328,11 @@ public class Main {
         string();
         primitiveToString();
         stringBuilding();
-        compareStrings();*/
+        compareStrings();
         numericToString();
         parseString();
+        datesAndTimes();*/
+        simpleCalc();
     }
 
 
