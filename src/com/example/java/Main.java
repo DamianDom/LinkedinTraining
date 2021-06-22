@@ -241,7 +241,7 @@ public class Main {
         }
     }
 
-    private static void numericToString(){
+    private static void numericToString() {
 
         Locale locale = new Locale("pl", "PL");
 
@@ -257,7 +257,7 @@ public class Main {
         System.out.println("Integer: " + intF.format(doubleValue));
     }
 
-    private static void parseString(){
+    private static void parseString() {
         String s1 = "Welcome to California!";
         System.out.println("Length of string: " + s1.length());
 
@@ -274,7 +274,7 @@ public class Main {
         System.out.println(s3.length());
     }
 
-    private static void datesAndTimes(){
+    private static void datesAndTimes() {
         Date d = new Date();
         System.out.println(d);
 
@@ -296,7 +296,20 @@ public class Main {
         System.out.println(dtf.format(ld));
     }
 
-    private static void simpleCalc(){
+    private static void tryCatch() {
+
+        String welcome = "Welcome!";
+        char[] chars = welcome.toCharArray();
+
+        try {
+            char lastChar = chars[chars.length];
+            System.out.println(lastChar);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void simpleCalc() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter a numeric value: ");
@@ -311,6 +324,24 @@ public class Main {
 
         System.out.println("The answer is " + result);
 
+    }
+
+    private static void multiCatch() {
+        String welcome = "Welcome!";
+        char[] chars = welcome.toCharArray();
+
+        try {
+            char lastChar = chars[chars.length - 1];
+            System.out.println(lastChar);
+
+            String sub = welcome.substring(10);
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+//            e.printStackTrace();
+            System.out.println("Array index problem!");
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println("String index problem!");
+        }
     }
 
     public static void main(String[] args) {
@@ -331,8 +362,10 @@ public class Main {
         compareStrings();
         numericToString();
         parseString();
-        datesAndTimes();*/
-        simpleCalc();
+        datesAndTimes();
+        simpleCalc();*/
+        tryCatch();
+        multiCatch();
     }
 
 
