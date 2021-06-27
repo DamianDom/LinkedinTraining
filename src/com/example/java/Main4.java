@@ -7,7 +7,7 @@ public class Main4 {
     public static void main(String[] args) {
         int original = 10;
         System.out.println("Original before: " + original); //10
-        incrementValue();                                   //11
+        incrementValue(original);                                   //11
         System.out.println("Original after: " + original);  //10
 
         int[] arOriginal = {10, 20, 30};
@@ -23,6 +23,6 @@ public class Main4 {
 
     static private void incrementValueArray(int[] inMethod){
         inMethod[0]++;
-        System.out.println("In method: 0" + Integer.toString(inMethod[0]));
+        System.out.println("In method: " + Integer.toString(inMethod[0]));
     }
     }
