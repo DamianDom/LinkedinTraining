@@ -1,5 +1,7 @@
 package com.example.java;
 
+import java.util.Arrays;
+
 public class Main4 {
 
     public static void main(String[] args) {
@@ -8,8 +10,10 @@ public class Main4 {
         incrementValue();                                   //11
         System.out.println("Original after: " + original);  //10
 
-
-
+        int[] arOriginal = {10, 20, 30};
+        System.out.println("Original 1 place in array before: " + arOriginal[0]); //10
+        incrementValueArray(arOriginal);                                                    //11
+        System.out.println("Original 1 place in array after: " + arOriginal[0]);  //11
     }
 
     static private void incrementValue(int inMethod){
@@ -17,4 +21,8 @@ public class Main4 {
         System.out.println("In method: " + inMethod);
     }
 
+    static private void incrementValueArray(int[] inMethod){
+        inMethod[0]++;
+        System.out.println("In method: 0" + Integer.toString(inMethod[0]));
+    }
     }
